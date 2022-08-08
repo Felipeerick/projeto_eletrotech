@@ -2,7 +2,8 @@
 @section('title', 'Adicione um cliente')
 @section('content')
 
-    <main class="container">
+
+<main class="container">
         <h2 class="mt-4">Dados básicos</h2>
         <form action="{{ route('admin.store') }}" method="POST">
             @csrf
@@ -39,7 +40,9 @@
                 <label for="street" class="form-label">Rua</label>
                 <input type="street" name="street" required class="form-control" id="street" placeholder="Ex:Rua das pedrinhas">
             </div>
-            <button type="submit" class="btn btn-success mb-3">Cadastrar Usuário</button>
+            <button type="submit" class="btn btn-success mb-3">Editar Usuário</button>
         </form>
     </main>
+
+
 @endsection

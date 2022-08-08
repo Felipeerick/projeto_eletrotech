@@ -2,28 +2,26 @@
 @section('title', 'Adicione um cliente')
 @section('content')
 
-    <table class="table table-hover">
+    <h2 class="mt-5">Listagem de Clientes</h2>
+
+    <table class="table table-hover mt-2">
         <thead>
-            <tr>
+            <tr>   
+                <th>ID</th>
                 <th>Nome</th>
                 <th>Email</th>
                 <th>Número de telefone</th>
-                <th>Bairro</th>
-                <th>Cidade</th>
-                <th>Estado</th>
-                <th>Rua</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
             @foreach($clientes as $cliente)
                 <tr>
+                    <td>{{ $cliente->id }}</td>
                     <td>{{ $cliente->name }}</td>
                     <td>{{ $cliente->email }}</td> 
                     <td>{{ $cliente->tel }}</td> 
-                    <td>{{ $cliente->neighborhood }}</td> 
-                    <td>{{ $cliente->city }}</td> 
-                    <td>{{ $cliente->state }}</td> 
-                    <td>{{ $cliente->street }}</td>     
+                    <td> <a href="{{ route('admin.show', $cliente->id) }}" class="btn btn-info">visualizar</a></td>  
                 </tr>
             @endforeach
         </tbody> 
