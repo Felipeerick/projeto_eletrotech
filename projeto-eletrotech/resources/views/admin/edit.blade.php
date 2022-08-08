@@ -5,19 +5,20 @@
 
 <main class="container">
         <h2 class="mt-4">Dados básicos</h2>
-        <form action="{{ route('admin.store') }}" method="POST">
+        <form action="{{ route('admin.update', $cliente->id) }}" method="POST">
             @csrf
+            @method('PUT')
             <div class="mb-3">
                 <label for="name" class="form-label">Nome</label>
-                <input type="text" name='name' class="form-control" id="name" required placeholder="Ex:Alberto almeida">
+                <input type="text" name='name' value="{{ $cliente->name }}" class="form-control" id="name" required placeholder="Ex:Alberto almeida">
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Email (Opcional)</label>
-                <input type="email" name='email' class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                <label for="email" class="form-label">Email (Opcional)</label>
+                <input type="email" name='email'  value="{{ $cliente->email }}"class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
             </div>
             <div class="mb-3">
                 <label for="tel" class="form-label">Número de telefone</label>
-                <input type="text" name='tel' class="form-control" id="tel" required placeholder="71 9 9999-9999">
+                <input type="text" name='tel' value="{{ $cliente->tel }}" class="form-control" id="tel" required placeholder="71 9 9999-9999">
             </div>
 
             <hr>
@@ -26,19 +27,19 @@
 
             <div class="mb-3">
                 <label for="neighborhood" class="form-label">Bairro</label>
-                <input type="neighborhood" name='neighborhood' class="form-control" required id="neighborhood" placeholder="Ex:7 de abril">
+                <input type="neighborhood"  value="{{ $cliente->neighborhood }}" name='neighborhood' class="form-control" required id="neighborhood" placeholder="Ex:7 de abril">
             </div>
             <div class="mb-3">
                 <label for="city" class="form-label">Cidade</label>
-                <input type="city" name="city" required class="form-control" id="city" placeholder="Ex:Salvador">
+                <input type="city"  value="{{ $cliente->city }}" name="city" required class="form-control" id="city" placeholder="Ex:Salvador">
             </div>
             <div class="mb-3">
                 <label for="state" class="form-label">Estado</label>
-                <input type="state" name="state" required class="form-control" id="state" placeholder="Ex:Bahia">
+                <input type="state"  value="{{ $cliente->state }}" name="state" required class="form-control" id="state" placeholder="Ex:Bahia">
             </div>
             <div class="mb-3">
                 <label for="street" class="form-label">Rua</label>
-                <input type="street" name="street" required class="form-control" id="street" placeholder="Ex:Rua das pedrinhas">
+                <input type="street"  value="{{ $cliente->street }}"  name="street" required class="form-control" id="street" placeholder="Ex:Rua das pedrinhas">
             </div>
             <button type="submit" class="btn btn-success mb-3">Editar Usuário</button>
         </form>

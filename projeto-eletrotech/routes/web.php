@@ -30,3 +30,7 @@ Route::post('/admin/store', [ClienteController::class, 'store'])->name('admin.st
 Route::get('/admin/{id}/show',[ClienteController::class, 'show'])->name('admin.show');
 
 Route::delete('/admin/{id}/destroy',[ClienteController::class, 'destroy'])->name('admin.destroy');
+
+Route::get('/admin/{id}/edit', [ClienteController::class, 'edit'])->name('admin.edit');
+
+Route::put('/admin/{id}/update', [ClienteController::class, 'update'])->name('admin.update');

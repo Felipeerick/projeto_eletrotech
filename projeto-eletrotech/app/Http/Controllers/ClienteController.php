@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class ClienteController extends Controller
 {
-    public function __construct(Cliente $Cliente)
+    public function __construct(Cliente $cliente)
     {
-        $this->cliente = $Cliente;
+        $this->cliente = $cliente;
     }
 
     public function index()
@@ -22,20 +22,21 @@ class ClienteController extends Controller
     public function create()
     {
         return view('admin.create');
-
-        return redirect()->route('admin.index');
     }
 
     public function store(Request $request)
     {
         $data = $request->all();
         $this->cliente->create($data);
+
+        return redirect()->route('admin.index');
     }
 
    
     public function show($id)
     {
-        $cliente = $this->cliente->find($id);
+        if(!$cliente = $this->cliente->find($id))
+            return redirect()->route('admin.index');
 
         $title = 'Usuário '. $cliente->name;
 
@@ -45,21 +46,33 @@ class ClienteController extends Controller
    
     public function edit($id)
     {
-        $cliente = $this->cliente->find($id);
+        if(!$cliente = $this->cliente->find($id))
+            return redirect()->route('admin.index');
+
         return view('admin.edit', compact('cliente'));
     }
 
 
     public function update(Request $request, $id)
     {
-        //
+        if (!$cliente =  $this->cliente ->find($id))
+            return redirect()->route('admin.index');
+        
+        $data = $request->all();
+        
+        $cliente->update($data);
+
+        return redirect()->route('admin.index');
     }
 
     
     public function destroy($id)
     {
-        $cliente = $this->cliente->find($id);
+        if (!$cliente =  $this->cliente ->find($id))
+            return redirect()->route('admin.index');
 
         $this->cliente->delete($cliente);
+
+        return redirect()->route('admin.index');
     }
 }
