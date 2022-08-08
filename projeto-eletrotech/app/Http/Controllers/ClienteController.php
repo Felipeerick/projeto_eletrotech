@@ -16,12 +16,12 @@ class ClienteController extends Controller
     {
         $clientes = $this->cliente->all();
 
-        return view('admin.index', compact('clientes'));
+        return view('client.index', compact('clientes'));
     }
 
     public function create()
     {
-        return view('admin.create');
+        return view('client.create');
     }
 
     public function store(Request $request)
@@ -29,18 +29,18 @@ class ClienteController extends Controller
         $data = $request->all();
         $this->cliente->create($data);
 
-        return redirect()->route('admin.index');
+        return redirect()->route('client.index');
     }
 
    
     public function show($id)
     {
         if(!$cliente = $this->cliente->find($id))
-            return redirect()->route('admin.index');
+            return redirect()->route('client.index');
 
         $title = 'Usuário '. $cliente->name;
 
-        return view('admin.show', compact('cliente', 'title'));
+        return view('client.show', compact('cliente', 'title'));
     }
 
    
@@ -49,30 +49,29 @@ class ClienteController extends Controller
         if(!$cliente = $this->cliente->find($id))
             return redirect()->route('admin.index');
 
-        return view('admin.edit', compact('cliente'));
+        return view('client.edit', compact('cliente'));
     }
 
 
     public function update(Request $request, $id)
     {
         if (!$cliente =  $this->cliente ->find($id))
-            return redirect()->route('admin.index');
+            return redirect()->route('client.index');
         
         $data = $request->all();
         
         $cliente->update($data);
 
-        return redirect()->route('admin.index');
+        return redirect()->route('client.index');
     }
 
     
     public function destroy($id)
     {
-        if (!$cliente =  $this->cliente ->find($id))
-            return redirect()->route('admin.index');
+        $cliente =  $this->cliente->find($id);
 
-        $this->cliente->delete($cliente);
+        $cliente->delete();
 
-        return redirect()->route('admin.index');
+        return redirect()->route('client.index');
     }
 }

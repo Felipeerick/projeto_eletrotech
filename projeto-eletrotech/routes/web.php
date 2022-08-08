@@ -21,16 +21,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin/index', [ClienteController::class, 'index'])->name('admin.index');
+Route::get('/client/index', [ClienteController::class, 'index'])->name('client.index');
 
-Route::get('/admin/create', [ClienteController::class, 'create'])->name('admin.create');
+Route::get('/client/create', [ClienteController::class, 'create'])->name('client.create');
 
-Route::post('/admin/store', [ClienteController::class, 'store'])->name('admin.store');
+Route::post('/client/store', [ClienteController::class, 'store'])->name('client.store');
 
-Route::get('/admin/{id}/show',[ClienteController::class, 'show'])->name('admin.show');
+Route::get('/client/{id}/show',[ClienteController::class, 'show'])->name('client.show');
 
-Route::delete('/admin/{id}/destroy',[ClienteController::class, 'destroy'])->name('admin.destroy');
+Route::delete('/client/{id}/destroy',[ClienteController::class, 'destroy'])->name('client.destroy');
 
-Route::get('/admin/{id}/edit', [ClienteController::class, 'edit'])->name('admin.edit');
+Route::get('/client/{id}/edit', [ClienteController::class, 'edit'])->name('client.edit');
 
-Route::put('/admin/{id}/update', [ClienteController::class, 'update'])->name('admin.update');
+Route::put('/client/{id}/update', [ClienteController::class, 'update'])->name('client.update');

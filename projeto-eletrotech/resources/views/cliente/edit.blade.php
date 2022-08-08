@@ -1,11 +1,11 @@
-@extends('templates.admin')
+@extends('templates.client')
 @section('title', 'Adicione um cliente')
 @section('content')
 
 
 <main class="container">
         <h2 class="mt-4">Dados básicos</h2>
-        <form action="{{ route('admin.update', $cliente->id) }}" method="POST">
+        <form action="{{ route('client.update', $cliente->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="mb-3">

@@ -1,13 +1,14 @@
-@extends('templates.admin')
+@extends('templates.client')
 @section('title', 'Adicione um cliente')
 @section('content')
 
     <h2 class="mt-5">Listagem de Clientes</h2>
 
+    <a href="{{ route('client.create') }}" class="btn btn-info mt-2">+ Adicionar novo cliente</a>
+
     <table class="table table-hover mt-2">
         <thead>
             <tr>   
-                <th>ID</th>
                 <th>Nome</th>
                 <th>Email</th>
                 <th>Número de telefone</th>
@@ -15,15 +16,18 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($clientes as $cliente)
+            @forelse($clientes as $cliente)
                 <tr>
-                    <td>{{ $cliente->id }}</td>
                     <td>{{ $cliente->name }}</td>
                     <td>{{ $cliente->email }}</td> 
                     <td>{{ $cliente->tel }}</td> 
-                    <td> <a href="{{ route('admin.show', $cliente->id) }}" class="btn btn-info">visualizar</a></td>  
+                    <td> <a href="{{ route('client.show', $cliente->id) }}" class="btn btn-info">visualizar</a></td>  
                 </tr>
-            @endforeach
+                @empty
+                <div class="alert alert-primary mt-3" role="alert">
+                    Ops... sua tabela está vazia, cadastre um novo usuário para preencher a tabela e a mensagem sumir :}
+                </div>
+            @endforelse
         </tbody> 
     </table>
 

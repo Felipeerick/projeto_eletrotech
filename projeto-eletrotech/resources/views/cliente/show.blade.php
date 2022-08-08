@@ -1,4 +1,4 @@
-@extends('templates.admin')
+@extends('templates.client')
 @section('title', $title)
 @section('content')
 
@@ -7,6 +7,7 @@
 <table class="table table-hover mt-2">
     <thead>
         <tr>
+            <th>ID</th>
             <th>Nome</th>
             <th>Email</th>
             <th>Número de telefone</th>
@@ -14,6 +15,7 @@
     </thead>
     <tbody>
             <tr>
+                <td>{{ $cliente->id }}</td>
                 <td>{{ $cliente->name }}</td>
                 <td>{{ $cliente->email }}</td> 
                 <td>{{ $cliente->tel }}</td> 
@@ -38,8 +40,10 @@
                 <td>{{ $cliente->state }}</td> 
                 <td>{{ $cliente->street }}</td>
                 <td class="d-flex">
-                    <a href="{{ route('admin.edit', $cliente->id) }}" class="btn btn-warning mx-1">editar</a>
-                    <form action="{{ route('admin.destroy', $cliente->id) }}">
+                    <a href="{{ route('client.edit', $cliente->id) }}" class="btn btn-warning mx-1">editar</a>
+                    <form action="{{ route('client.destroy', $cliente->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
                       <button type="submit" class="btn btn-danger">remover</button>
                     </form>
                 </td>     
