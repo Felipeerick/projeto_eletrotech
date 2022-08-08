@@ -1,10 +1,10 @@
 @extends('templates.cliente')
-@section('title', 'Adicione um cliente')
+@section('title', 'Ordem de Serviço')
 @section('content')
 
 <h2 class="mt-5">Ordem de Serviços</h2>
 
-<a href="#" class="btn btn-info mt-2">+ Adicionar nova ordem de serviço</a>
+<a href="{{ route('orderService.create') }}" class="btn btn-info mt-2">+ Adicionar nova ordem de serviço</a>
 
 <table class="table table-hover mt-2">
     <thead>

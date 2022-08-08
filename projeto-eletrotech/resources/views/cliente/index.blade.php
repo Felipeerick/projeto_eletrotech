@@ -21,7 +21,7 @@
                     <td>{{ $cliente->name }}</td>
                     <td>{{ $cliente->email }}</td> 
                     <td>{{ $cliente->tel }}</td> 
-                    <td> <a href="{{ route('client.show', $cliente->id) }}" class="btn btn-info">visualizar</a></td>  
+                    <td> <a href="{{ route('cliente.show', $cliente->id) }}" class="btn btn-info">visualizar</a></td>  
                 </tr>
                 @empty
                 <div class="alert alert-primary mt-3" role="alert">
