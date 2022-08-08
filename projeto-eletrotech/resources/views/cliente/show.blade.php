@@ -1,4 +1,4 @@
-@extends('templates.client')
+@extends('templates.cliente')
 @section('title', $title)
 @section('content')
 
@@ -40,8 +40,8 @@
                 <td>{{ $cliente->state }}</td> 
                 <td>{{ $cliente->street }}</td>
                 <td class="d-flex">
-                    <a href="{{ route('client.edit', $cliente->id) }}" class="btn btn-warning mx-1">editar</a>
-                    <form action="{{ route('client.destroy', $cliente->id) }}" method="POST">
+                    <a href="{{ route('cliente.edit', $cliente->id) }}" class="btn btn-warning mx-1">editar</a>
+                    <form action="{{ route('cliente.destroy', $cliente->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                       <button type="submit" class="btn btn-danger">remover</button>

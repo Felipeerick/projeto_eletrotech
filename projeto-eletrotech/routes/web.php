@@ -3,34 +3,29 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     ClienteController,
-
+    OrderServiceController,
 };
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/client/index', [ClienteController::class, 'index'])->name('client.index');
+//cliente
 
-Route::get('/client/create', [ClienteController::class, 'create'])->name('client.create');
+Route::get('/cliente/index', [ClienteController::class, 'index'])->name('cliente.index');
 
-Route::post('/client/store', [ClienteController::class, 'store'])->name('client.store');
+Route::get('/cliente/create', [ClienteController::class, 'create'])->name('cliente.create');
 
-Route::get('/client/{id}/show',[ClienteController::class, 'show'])->name('client.show');
+Route::post('/cliente/store', [ClienteController::class, 'store'])->name('cliente.store');
 
-Route::delete('/client/{id}/destroy',[ClienteController::class, 'destroy'])->name('client.destroy');
+Route::get('/cliente/{id}/show',[ClienteController::class, 'show'])->name('cliente.show');
 
-Route::get('/client/{id}/edit', [ClienteController::class, 'edit'])->name('client.edit');
+Route::delete('/cliente/{id}/destroy',[ClienteController::class, 'destroy'])->name('cliente.destroy');
 
-Route::put('/client/{id}/update', [ClienteController::class, 'update'])->name('client.update');
+Route::get('/cliente/{id}/edit', [ClienteController::class, 'edit'])->name('cliente.edit');
+
+Route::put('/cliente/{id}/update', [ClienteController::class, 'update'])->name('cliente.update');
+
+//Ordem de serviço
+
+Route::get('/orderService/index',[OrderServiceController::class, 'index'])->name('orderService.index');

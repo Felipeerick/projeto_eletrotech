@@ -1,10 +1,10 @@
-@extends('templates.client')
+@extends('templates.cliente')
 @section('title', 'Adicione um cliente')
 @section('content')
 
     <h2 class="mt-5">Listagem de Clientes</h2>
 
-    <a href="{{ route('client.create') }}" class="btn btn-info mt-2">+ Adicionar novo cliente</a>
+    <a href="{{ route('cliente.create') }}" class="btn btn-info mt-2">+ Adicionar novo cliente</a>
 
     <table class="table table-hover mt-2">
         <thead>

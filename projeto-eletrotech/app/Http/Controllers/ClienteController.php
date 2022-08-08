@@ -16,12 +16,12 @@ class ClienteController extends Controller
     {
         $clientes = $this->cliente->all();
 
-        return view('client.index', compact('clientes'));
+        return view('cliente.index', compact('clientes'));
     }
 
     public function create()
     {
-        return view('client.create');
+        return view('cliente.create');
     }
 
     public function store(Request $request)
@@ -29,40 +29,40 @@ class ClienteController extends Controller
         $data = $request->all();
         $this->cliente->create($data);
 
-        return redirect()->route('client.index');
+        return redirect()->route('cliente.index');
     }
 
    
     public function show($id)
     {
         if(!$cliente = $this->cliente->find($id))
-            return redirect()->route('client.index');
+            return redirect()->route('cliente.index');
 
         $title = 'Usuário '. $cliente->name;
 
-        return view('client.show', compact('cliente', 'title'));
+        return view('cliente.show', compact('cliente', 'title'));
     }
 
    
     public function edit($id)
     {
         if(!$cliente = $this->cliente->find($id))
-            return redirect()->route('admin.index');
+            return redirect()->route('cliente.index');
 
-        return view('client.edit', compact('cliente'));
+        return view('cliente.edit', compact('cliente'));
     }
 
 
     public function update(Request $request, $id)
     {
         if (!$cliente =  $this->cliente ->find($id))
-            return redirect()->route('client.index');
+            return redirect()->route('cliente.index');
         
         $data = $request->all();
         
         $cliente->update($data);
 
-        return redirect()->route('client.index');
+        return redirect()->route('cliente.index');
     }
 
     
@@ -72,6 +72,6 @@ class ClienteController extends Controller
 
         $cliente->delete();
 
-        return redirect()->route('client.index');
+        return redirect()->route('cliente.index');
     }
 }
