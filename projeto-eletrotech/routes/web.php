@@ -31,3 +31,5 @@ Route::put('/cliente/{id}/update', [ClienteController::class, 'update'])->name('
 Route::get('/orderService/index',[OrderServiceController::class, 'index'])->name('orderService.index');
 
 Route::get('/orderService/create',[OrderServiceController::class, 'create'])->name('orderService.create');
+
+Route::post('/orderService/store',[OrderServiceController::class, 'store'])->name('orderService.store');

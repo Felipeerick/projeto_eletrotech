@@ -23,8 +23,15 @@ return new class extends Migration
             $table->string('model');
             $table->string('brand');
             $table->string('serialNumber');
+            $table->string('technicalReport')->nullable();
             $table->string('observation')->nullable();
             $table->string('defect')->nullable();
+            $table->string('serviceDescription')->nullable();
+            $table->string('warrantyService')->nullable();
+            $table->string('valueService')->nullable();
+            $table->string('productDescription')->nullable();
+            $table->string('warrantyProduct')->nullable();
+            $table->string('valueProduct')->nullable();
             $table->timestamps();
         });
     }

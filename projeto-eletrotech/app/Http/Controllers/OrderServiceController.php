@@ -5,18 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\{
     Cliente,
     OrderService,
-    OrderService_Product,   
-    OrderService_Service
 };
 
 use Illuminate\Http\Request;
 
 class OrderServiceController extends Controller
 {
-   public function __construct(OrderService_Product $product, OrderService_Service $service, OrderService $orderService, Cliente $cliente)
+   public function __construct( OrderService $orderService, Cliente $cliente)
    {
-    $this->product = $product;
-    $this->service = $service;
     $this->orderService = $orderService;
     $this->cliente = $cliente;
    }
@@ -37,7 +33,11 @@ class OrderServiceController extends Controller
    
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $data['valueTotal'] = $request->valueService + $request->valueProduct;
+        
+        $this->orderService->create($data);
     }
 
    

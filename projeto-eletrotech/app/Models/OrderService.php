@@ -21,17 +21,15 @@ class OrderService extends Model
         'serialNumber',
         'observation',
         'defect',
+        'order_service_id',
+        'serviceDescription',
+        'warrantyService',
+        'valueService',
+        'order_product_id',
+        'productDescription',
+        'warrantyProduct',
+        'valueProduct',
     ];
-
-    public function OrderService_Product()
-    {
-        return $this->hasMany(OrdemService_Product::class);
-    }
-
-    public function OrderService_Service()
-    {
-        return $this->hasMany(OrdemService_Service::class);
-    }
 
     public function cliente(){
         return $this->hasMany(Cliente::class);
