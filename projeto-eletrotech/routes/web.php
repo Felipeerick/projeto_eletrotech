@@ -33,3 +33,5 @@ Route::get('/orderService/index',[OrderServiceController::class, 'index'])->name
 Route::get('/orderService/create',[OrderServiceController::class, 'create'])->name('orderService.create');
 
 Route::post('/orderService/store',[OrderServiceController::class, 'store'])->name('orderService.store');
+
+Route::get('/orderService/{id}/show',[OrderServiceController::class, 'show'])->name('orderService.show');

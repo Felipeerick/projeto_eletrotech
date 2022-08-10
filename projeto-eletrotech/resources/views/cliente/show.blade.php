@@ -37,8 +37,12 @@
             <tr>
                 <td>{{ $cliente->neighborhood }}</td> 
                 <td>{{ $cliente->city }}</td> 
-                <td>{{ $cliente->state }}</td> 
-                <td>{{ $cliente->street }}</td>
+                <td>{{ $cliente->state }}</td>
+                @if($cliente->street) 
+                    <td>{{ $cliente->street }}</td>
+                @else
+                    <td>Sem Rua Cadastrada</td>
+                @endif
                 <td class="d-flex">
                     <a href="{{ route('cliente.edit', $cliente->id) }}" class="btn btn-warning mx-1">editar</a>
                     <form action="{{ route('cliente.destroy', $cliente->id) }}" method="POST">

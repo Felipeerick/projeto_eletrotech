@@ -32,6 +32,8 @@ return new class extends Migration
             $table->string('productDescription')->nullable();
             $table->string('warrantyProduct')->nullable();
             $table->string('valueProduct')->nullable();
+            $table->string('tel')->nullable();
+            $table->string('name')->nullable();
             $table->timestamps();
         });
     }

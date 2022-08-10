@@ -12,9 +12,9 @@
             </div>
             <div class="mb-3">
                 <label for="name" class="form-label">Nome do Cliente</label>
-                <select name="name" class="form-control" id="name"> 
+                <select name='name' class="form-control" id="name"> 
                     @foreach($clientes as $cliente)
-                        <option>{{ $cliente->name }}</option>
+                        <option value="{{ $cliente->name }}">{{ $cliente->name }}</option>
                     @endforeach
                 </select>
             </div>
@@ -70,11 +70,11 @@
             </div>
             <div class="mb-3">
                 <label for="valueProduct" class="form-label">Valor do Produto</label>
-                <input type="number" name="valueProduct" placeholder="Somente números inteiros Ex:12345" required class="form-control" id="valueProduct">
+                <input type="text" name="valueProduct" required class="form-control" id="valueProduct">
             </div>
             <div class="mb-3">
                 <label for="warrantyProduct" class="form-label">Garantia do Produto</label>
-                <input type="text" name="warrantyProduct" required class="form-control" id="warrantyProduct">
+                <input type="number"  placeholder="Somente números inteiros Ex:3" name="warrantyProduct" required class="form-control" id="warrantyProduct">
             </div>
 
             <hr>
@@ -87,11 +87,15 @@
             </div>
             <div class="mb-3">
                 <label for="valueService" class="form-label">Valor do Serviço</label>
-                <input type="number" name="valueService" placeholder="Somente números inteiros Ex:12345" required class="form-control" id="valueService">
+                <input type="text" name="valueService" required class="form-control" id="valueService">
             </div>
             <div class="mb-3">
                 <label for="warrantyService" class="form-label">Garantia do Serviço</label>
-                <input type="text" name="warrantyService" required class="form-control" id="warrantyService">
+                <input type="number" placeholder="Somente números inteiros Ex:3" name="warrantyService" required class="form-control" id="warrantyService">
+            </div>
+            <div class="mb-3">
+                <label for="discount" class="form-label">Desconto</label>
+                <input type="number" name="discount" placeholder="Somente números inteiros Ex:3" required class="form-control" id="discount">
             </div>
             <button type="submit" class="btn btn-success mb-3">Cadastrar Ordem de Serviço</button>
         </form>

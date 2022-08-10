@@ -22,18 +22,26 @@
         </tr>
     </thead>
     <tbody>
-        @forelse($Order_Service as $order)
+        @forelse($order_service as $order)
             <tr>
                 <td>{{ $order->id }}</td>
                 <td>{{ $order->dateOfEntry }}</td> 
-                <td>{{ $order->cliente()->tel }}</td> 
-                <td>{{ $order->cliente()->name }}</td> 
-                <td>{{ $order->OrderService_Product()->valueProduct}}</td> 
-                <td>{{ $order->OrderService_Service()->valueService }}</td> 
-                <td>{{ $order->discount }}</td> 
-                <td>{{ $order->valueTotal }}</td> 
+                @if($order->tel) 
+                    <td>{{ $order->tel }}</td>
+                @else
+                    <td>Sem Telefone Cadastrado</td>
+                @endif
+                <td>{{ $order->name }}</td> 
+                <td>R$ {{ number_format($order->valueProduct, 2, '.', ',')}} Reais</td> 
+                <td>R$ {{ number_format($order->valueService, 2, '.', ',') }} Reais</td>
+                @if($order->discount) 
+                    <td>{{ $order->discount }} meses</td>
+                @else
+                    <td>Sem Desconto</td>
+                @endif
+                <td>R$ {{ number_format($order->valueTotal, 2, '.', ',') }} Reais</td> 
                 <td>{{ $order->status }}</td> 
-                <td> <a href="#" class="btn btn-info">visualizar</a></td>  
+                <td> <a href="{{route('orderService.show', $order->id)}}" class="btn btn-info">visualizar</a></td>  
             </tr>
             @empty
             <div class="alert alert-primary mt-3" role="alert">

@@ -19,8 +19,8 @@ class OrderServiceController extends Controller
 
     public function index()
     {
-        $Order_Service = OrderService::all();
-        return view('orderService.index', compact('Order_Service'));
+        $order_service = OrderService::all();
+        return view('orderService.index', compact('order_service'));
     }
 
     public function create()
@@ -34,16 +34,21 @@ class OrderServiceController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-
-        $data['valueTotal'] = $request->valueService + $request->valueProduct;
+        
+        $data['valueTotal'] = ($request->valueService + $request->valueProduct);
         
         $this->orderService->create($data);
+
+        return redirect()->route('orderService.index');
     }
 
    
     public function show($id)
     {
-        //
+        if(!$order = $this->orderService->find($id))
+        return redirect()->route('cliente.index');
+
+        return view('orderService.show', compact('order'));
     }
 
    

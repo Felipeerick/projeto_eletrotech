@@ -35,11 +35,11 @@
             </div>
             <div class="mb-3">
                 <label for="state" class="form-label">Estado</label>
-                <input type="state"  value="{{ $cliente->state }}" name="state" required class="form-control" id="state" placeholder="Ex:Bahia">
+                <input type="state"  value="{{ $cliente->state }}" name="state" required  class="form-control" id="state" placeholder="Ex:Bahia">
             </div>
             <div class="mb-3">
                 <label for="street" class="form-label">Rua</label>
-                <input type="street"  value="{{ $cliente->street }}"  name="street" required class="form-control" id="street" placeholder="Ex:Rua das pedrinhas">
+                <input type="street"  value="{{ $cliente->street }}"  name="street"  class="form-control" id="street" placeholder="Ex:Rua das pedrinhas">
             </div>
             <button type="submit" class="btn btn-success mb-3">Editar Usuário</button>
         </form>
