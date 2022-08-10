@@ -16,8 +16,11 @@ return new class extends Migration
         Schema::create('order_services', function (Blueprint $table) {
             $table->id();
             $table->string('dateOfEntry');
-            $table->string('valueTotal');
-            $table->string('discount')->nullable();
+            $table->string('valueTotalProduct');
+            $table->string('valueTotalService');
+            $table->string('valueTotalOs');
+            $table->string('discountService')->nullable();
+            $table->string('discountProduct')->nullable();
             $table->string('status');
             $table->string('equipment');
             $table->string('model');

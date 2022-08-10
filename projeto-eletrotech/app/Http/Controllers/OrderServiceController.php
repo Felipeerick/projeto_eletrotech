@@ -34,9 +34,13 @@ class OrderServiceController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+
         
-        $data['valueTotal'] = ($request->valueService + $request->valueProduct);
+        $data['valueTotalService'] = ($request->valueService - $request->discountService);
+        $data['valueTotalProduct'] = ($request->valueProduct - $request->discountProduct);
         
+        $data['valueTotalOs'] = $data['valueTotalService'] + $data['valueTotalProduct'];
+
         $this->orderService->create($data);
 
         return redirect()->route('orderService.index');
