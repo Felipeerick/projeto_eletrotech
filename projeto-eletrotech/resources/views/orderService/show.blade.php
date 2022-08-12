@@ -12,7 +12,7 @@
           <button type="submit" class="btn btn-danger mx-3">Deletar essa Ordem de Serviço</button>
       </form>
 
-      <a href="#" class="btn btn-success">Editar essa Ordem de Serviço</a>
+      <a href="{{ route('orderService.edit', $order->id) }}" class="btn btn-success">Editar essa Ordem de Serviço</a>
   </div>
 
   <table class="table table-hover mt-3">

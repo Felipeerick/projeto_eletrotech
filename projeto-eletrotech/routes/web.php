@@ -36,4 +36,8 @@ Route::post('/orderService/store',[OrderServiceController::class, 'store'])->nam
 
 Route::get('/orderService/{id}/show',[OrderServiceController::class, 'show'])->name('orderService.show');
 
+Route::get('/orderService/{id}/edit',[OrderServiceController::class, 'edit'])->name('orderService.edit');
+
+Route::put('/orderService/{id}/update',[OrderServiceController::class, 'update'])->name('orderService.update');
+
 Route::delete('/orderService/{id}/destroy}', [OrderServiceController::class, 'destroy'])->name('orderService.destroy');
