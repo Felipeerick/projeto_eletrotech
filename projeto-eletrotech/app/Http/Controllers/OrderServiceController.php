@@ -68,8 +68,12 @@ class OrderServiceController extends Controller
     }
 
     
-    public function destroy($id)
+    public function delete($id)
     {
-        //
+        $order = $this->orderService->find($id);
+
+        $this->orderService->delete($order);
+
+        return redirect()->route('orderService.index');
     }
 }

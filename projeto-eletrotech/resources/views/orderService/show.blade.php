@@ -7,7 +7,7 @@
   <div class="mt-4">
       <a href="#" class="btn btn-info">Gerar PDF da Ordem de Serviço</a>
 
-      <a href="#" class="btn btn-danger mx-3">Deletar essa Ordem de Serviço</a>
+      <a href="{{route('orderService.delete')}}" class="btn btn-danger mx-3">Deletar essa Ordem de Serviço</a>
 
       <a href="#" class="btn btn-success">Editar essa Ordem de Serviço</a>
   </div>

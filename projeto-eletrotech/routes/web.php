@@ -35,3 +35,5 @@ Route::get('/orderService/create',[OrderServiceController::class, 'create'])->na
 Route::post('/orderService/store',[OrderServiceController::class, 'store'])->name('orderService.store');
 
 Route::get('/orderService/{id}/show',[OrderServiceController::class, 'show'])->name('orderService.show');
+
+Route::delete('/orderService/{id/delete}', [OrderServiceController::class, 'delete'])->name('orderService.delete');
