@@ -17,10 +17,9 @@
                 <input type="email" name='email'  value="{{ $cliente->email }}"class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
             </div>
             <div class="mb-3">
-                <label for="tel" class="form-label">Número de telefone</label>
-                <input type="text" name='tel' value="{{ $cliente->tel }}" class="form-control" id="tel" required placeholder="71 9 9999-9999">
-            </div>
-
+                    <label for="tel" class="form-label">Número de telefone</label>
+                    <input type="text" value="{{ $cliente->tel }}" name='tel' onkeypress="checkTel()" maxlength="14" id="tel" pattern="[0-9]{2} [0-9]{1} [0-9]{4}-[0-9]{4}" class="form-control" required placeholder="71 9 9999-9999">
+                </div>
             <hr>
 
             <h2>Coloque o endereço do cliente</h2>

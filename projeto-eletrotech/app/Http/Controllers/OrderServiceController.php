@@ -69,10 +69,9 @@ class OrderServiceController extends Controller
 
     public function update(Request $request, $id)
     {
-        if(!$order = $this->orderService->find($id));
-        return redirect()->route('orderService.index');
-        
         $data = $request->all();
+
+        $order = $this->orderService->find($id);
 
         $order->update($data);
 

@@ -29,7 +29,7 @@ class ClienteController extends Controller
         $data = $request->all();
         $this->cliente->create($data);
 
-        return redirect()->route('cliente.index');
+        return redirect()->route('cliente.index')->with('add', 'Adicionado com sucesso! :}');
     }
 
    
@@ -62,7 +62,7 @@ class ClienteController extends Controller
         
         $cliente->update($data);
 
-        return redirect()->route('cliente.index');
+        return redirect()->route('cliente.index')->with('edit', 'editado com sucesso!');
     }
 
     
@@ -72,6 +72,6 @@ class ClienteController extends Controller
 
         $cliente->delete();
 
-        return redirect()->route('cliente.index');
+        return redirect()->route('cliente.index')->with('remove', 'removido com sucesso!');
     }
 }

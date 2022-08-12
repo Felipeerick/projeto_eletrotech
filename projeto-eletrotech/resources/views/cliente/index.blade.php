@@ -5,6 +5,17 @@
     <h2 class="mt-5">Listagem de Clientes</h2>
 
     <a href="{{ route('cliente.create') }}" class="btn btn-info mt-2">+ Adicionar novo cliente</a>
+    @if(session()->has('add'))
+        <span class="d-block p-2  mt-3 mb-1  alert alert-success">{{ session()->get('add') }}</span>
+    @endif
+
+    @if(session()->has('edit'))
+        <span class="d-block p-2  mt-3 mb-1 alert alert-warning">{{ session()->get('edit') }}</span>
+    @endif
+
+    @if(session()->has('remove'))
+        <span class="d-block p-2 mt-3 mb-1 alert alert-danger">{{ session()->get('remove') }}</span>
+    @endif
 
     <table class="table table-hover mt-2">
         <thead>

@@ -3,16 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="{{ asset('assets/images/eletrotech_favicon.png') }}">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link href="css/style.css" rel="stylesheet">
         <title>OS.pdf</title>
     </head>
     <body>
 
-        <h2>Ordem de Serviço</h2>
+    <img src="https://i.imgur.com/OzAiRlM.jpg" width="100px" alt="logo"> <span style="position: absolute; top:80px; left: 15px">Eletrotech</span>
 
-        <table class="table table-hover mt-3">
+        <h2 style="margin: 40px 0;">Ordem de Serviço</h2>
+
+        <table border="1px solid" width='100%'>
             <thead>
                 <tr>   
                     <th>N° da OS</th>
@@ -36,7 +35,7 @@
                 </tr>
             </tbody> 
         </table>
-        <table class="table table-hover mt-2">
+        <table border="1px solid" width='100%' style="margin: 60px 0px;">
             <thead>
                 <tr>   
                     <th>Equipamento</th>
@@ -55,22 +54,17 @@
                     <td>R$ {{ $order->valueTotalOs }} Reais</td>
                 </tr>
             </tbody> 
-        </table>
-        <div class="d-flex">
-            <div class="form-floating">
+        </table border="1px solid" width='100%'>
                 Laudo técnico
-                <textarea class="form-control"readonly  name='technicalReport' style="width: 300px; height:150px; resize:none;" placeholder="Leave a comment here" id="Laudo técnico"> {{ $order->technicalReport }}</textarea>
-             </div>       
-             <div class="form-floating">
-                 Defeito ou motivo
-                <textarea class="form-control"readonly name='defect' placeholder="Leave a comment here" style="width: 300px; height:150px; resize:none;" id="Defeito ou motivo"> {{ $order->defect }}</textarea>
-            </div>
-             <div class="form-floating">
-                 Observações
-                 <textarea class="form-control"readonly name='observation' placeholder="Leave a comment here" style="width: 300px; height:150px; resize:none;" id="Observações"> {{ $order->observation }}</textarea>
-            </div>
-        </div>
-        <table class="table table-hover mt-2">
+                <textarea readonly  name='technicalReport' style="width: 220px; height:150px; resize:none;" placeholder="Leave a comment here" id="Laudo técnico"> {{ $order->technicalReport }}</textarea>
+               
+                    <span style="position: absolute; left:470px; top:215px;"> Defeito ou motivo </span>
+                     <textarea readonly name='defect' placeholder="Leave a comment here" style="width: 220px; height:150px; resize:none; position:absolute; left:467px; top:232px;  "id="Defeito ou motivo"> {{ $order->defect }}</textarea>
+
+                     <span style="position: absolute; left:237px; top:217px;">Observações</span>
+                     <textarea readonly name='observation' placeholder="Leave a comment here" style="width: 220px; height:150px; resize:none; position:absolute;  left:234px; top:232px ;" id="Observações"> {{ $order->observation }}</textarea>
+    
+        <table border="1px solid" width='100%' style="margin: 50px 0;">
             <thead>
                 <tr>   
                     <th>Valor da Peça/Produto</th>
@@ -92,7 +86,7 @@
                 </tr>
             </tbody> 
         </table>
-        <table class="table table-hover mt-2">
+        <table border="1px solid" width='100%' style="margin-top: 20px;">
             <thead>
                 <tr>   
                     <th>Valor do Serviço</th>
