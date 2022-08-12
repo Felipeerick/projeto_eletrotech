@@ -43,7 +43,7 @@ class OrderServiceController extends Controller
 
         $this->orderService->create($data);
 
-        return redirect()->route('orderService.index');
+        return redirect()->route('orderService.index')->with('create', 'Adicionado com sucesso!');
     }
 
    
@@ -75,7 +75,7 @@ class OrderServiceController extends Controller
 
         $order->update($data);
 
-        return redirect()->route('orderService.index');
+        return redirect()->route('orderService.index')->with('edit', 'Editado com sucesso!');
     }
 
     
@@ -85,6 +85,6 @@ class OrderServiceController extends Controller
 
         $order->delete();
 
-        return redirect()->route('orderService.index');
+        return redirect()->route('orderService.index')->with('remove', 'Removido com sucesso!');
     }
 }

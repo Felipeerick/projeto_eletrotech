@@ -58,7 +58,7 @@
                   <td>{{$order->model}}</td> 
                   <td>{{$order->brand}}</td>
                   <td>{{$order->serialNumber}}</td>
-                  <td>R$ {{ $order->valueTotalOs }} Reais</td>
+                  <td>R$ {{ number_format($order->valueTotalOs, 2, '.', ',') }} Reais</td>
               </tr>
       </tbody> 
   </table>

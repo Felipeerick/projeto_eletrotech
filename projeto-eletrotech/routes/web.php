@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__.'/auth.php';
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     ClienteController,
@@ -7,13 +9,15 @@ use App\Http\Controllers\{
     PDFController,
 };
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::middleware(['auth'])->group(function(){
+
 //PDF
 Route::get('/pdf/{id}', [PDFController::class, 'pdf'])->name('pdf');
-
 
 //cliente
 
@@ -46,3 +50,5 @@ Route::get('/orderService/{id}/edit',[OrderServiceController::class, 'edit'])->n
 Route::put('/orderService/{id}/update',[OrderServiceController::class, 'update'])->name('orderService.update');
 
 Route::delete('/orderService/{id}/destroy}', [OrderServiceController::class, 'destroy'])->name('orderService.destroy');
+
+});

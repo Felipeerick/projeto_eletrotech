@@ -38,7 +38,7 @@ class ClienteController extends Controller
         if(!$cliente = $this->cliente->find($id))
             return redirect()->route('cliente.index');
 
-        $title = 'Usuário '. $cliente->name;
+        $title = 'Cliente '. $cliente->name;
 
         return view('cliente.show', compact('cliente', 'title'));
     }

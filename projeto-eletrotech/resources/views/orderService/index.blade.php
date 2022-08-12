@@ -6,6 +6,18 @@
 
     <a href="{{ route('orderService.create') }}" class="btn btn-info mt-2">+ Adicionar nova ordem de serviço</a>
 
+    @if(session()->has('create'))
+    <span class="d-block p-2  mt-3 mb-1  alert alert-success">{{ session()->get('create') }}</span>
+    @endif
+
+    @if(session()->has('edit'))
+    <span class="d-block p-2  mt-3 mb-1  alert alert-warning">{{ session()->get('edit') }}</span>
+    @endif
+
+    @if(session()->has('remove'))
+    <span class="d-block p-2  mt-3 mb-1  alert alert-danger">{{ session()->get('remove') }}</span>
+    @endif
+
     <table class="table table-hover mt-2">
         <thead>
             <tr>   

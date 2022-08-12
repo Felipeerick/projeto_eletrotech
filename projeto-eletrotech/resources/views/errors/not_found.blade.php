@@ -1,5 +1,5 @@
 @extends('templates.errors')
-@section('title', '404 not found')
+@section('title', '404 Not Found')
 @section('content')
 
 <article class='mt-5 mx-auto text-center'>
@@ -9,6 +9,5 @@
         <a href="/" class="btn btn-primary mt-3">Voltar a tela anterior</a>
     </div>
 </article>
-
 
 @endsection

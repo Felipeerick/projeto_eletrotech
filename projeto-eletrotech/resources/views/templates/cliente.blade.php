@@ -21,7 +21,10 @@
                             <a class="nav-link active" aria-current="page" href="{{ route('cliente.index') }}">Cliente</a>
                             <a class="nav-link active" href="{{ route('orderService.index') }}">Ordem de Serviço</a>
                             <li><hr class="dropdown-divider"></li>
-                            <a href="#" class="nav-link active">Logout</a>
+                            <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="btn btn-primary mx-3" ><i class="fa-solid fa-right-from-bracket"></i> Sair</button>                         
+                        </form>
                         </ul>
                     </li>
                 </div>
