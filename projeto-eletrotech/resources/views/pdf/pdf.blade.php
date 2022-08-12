@@ -7,7 +7,7 @@
     </head>
     <body>
 
-    <img src="https://i.imgur.com/OzAiRlM.jpg" width="100px" alt="logo"> <span style="position: absolute; top:80px; left: 15px">Eletrotech</span>
+    <img src="https://i.imgur.com/OzAiRlM.jpg" style="position: relative; left:295px;" width="100px" alt="logo"> <span style="position: absolute; top:90px; left:310px;">Eletrotech</span>
 
         <h2 style="margin: 40px 0;">Ordem de Serviço</h2>
 
@@ -16,7 +16,7 @@
                 <tr>   
                     <th>N° da OS</th>
                     <th>Data de cadastro</th>
-                    <th>Nome</th>
+                    <th>Nome do Cliente</th>
                     <th>Telefone </th>
                     <th>Status</th>
                 </tr>
@@ -58,11 +58,11 @@
                 Laudo técnico
                 <textarea readonly  name='technicalReport' style="width: 220px; height:150px; resize:none;" placeholder="Leave a comment here" id="Laudo técnico"> {{ $order->technicalReport }}</textarea>
                
-                    <span style="position: absolute; left:470px; top:215px;"> Defeito ou motivo </span>
-                     <textarea readonly name='defect' placeholder="Leave a comment here" style="width: 220px; height:150px; resize:none; position:absolute; left:467px; top:232px;  "id="Defeito ou motivo"> {{ $order->defect }}</textarea>
+                    <span style="position: absolute; left:470px; top:435px;;"> Defeito ou motivo </span>
+                     <textarea readonly name='defect' placeholder="Leave a comment here" style="width: 220px; height:150px; resize:none; position:absolute; left:467px; top:451.5px;  "id="Defeito ou motivo"> {{ $order->defect }}</textarea>
 
-                     <span style="position: absolute; left:237px; top:217px;">Observações</span>
-                     <textarea readonly name='observation' placeholder="Leave a comment here" style="width: 220px; height:150px; resize:none; position:absolute;  left:234px; top:232px ;" id="Observações"> {{ $order->observation }}</textarea>
+                     <span style="position: absolute; left:237px; top:435px;">Observações</span>
+                     <textarea readonly name='observation' placeholder="Leave a comment here" style="width: 220px; height:150px; resize:none; position:absolute;  left:234px;top:451.5px;   ;" id="Observações"> {{ $order->observation }}</textarea>
     
         <table border="1px solid" width='100%' style="margin: 50px 0;">
             <thead>
