@@ -58,10 +58,12 @@ class OrderServiceController extends Controller
    
     public function edit($id)
     {
-        if(!$order = $this->orderService->find($id));
-        return redirect()->back();
+        if(!$order = $this->orderService->find($id))
+        return redirect()->route('cliente.index');
 
-        return view('orderService.edit', compact('order'));
+        $clientes = $this->cliente->all();
+       
+        return view('orderService.edit', compact('order', 'clientes'));
     }
 
 

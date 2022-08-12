@@ -4,7 +4,7 @@
 
     <main class="container">
         <h2 class="mt-4">Ordem de Serviço</h2>
-        <form action="{{route('orderService.update')}}" method="POST">
+        <form action="{{route('orderService.update', $order->id)}}" method="POST">
             @csrf
             @method('PUT')
             <div class="d-flex">
@@ -115,7 +115,7 @@
                 </div>
             </div>
            
-            <button type="submit" class="btn btn-success mt-2 mb-4">Cadastrar Ordem de Serviço</button>
+            <button type="submit" class="btn btn-success mt-2 mb-4">Atualizar a Ordem de Serviço</button>
         </form>
     </main>
 
