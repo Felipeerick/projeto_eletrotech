@@ -4,10 +4,13 @@
 
   <h3 class="mt-3 mb-2">Ordem de Serviço do Cliente {{$order->name}}</h3>
 
-  <div class="mt-4">
+  <div class="mt-4 d-flex">
       <a href="#" class="btn btn-info">Gerar PDF da Ordem de Serviço</a>
-
-      <a href="{{route('orderService.delete')}}" class="btn btn-danger mx-3">Deletar essa Ordem de Serviço</a>
+      <form action="{{ route('orderService.destroy', $order->id)  }}" method="POST" >
+          @csrf
+          @method('DELETE')
+          <button type="submit" class="btn btn-danger mx-3">Deletar essa Ordem de Serviço</button>
+      </form>
 
       <a href="#" class="btn btn-success">Editar essa Ordem de Serviço</a>
   </div>

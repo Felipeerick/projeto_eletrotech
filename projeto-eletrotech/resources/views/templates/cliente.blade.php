@@ -20,6 +20,7 @@
                             <a class="nav-link active" aria-current="page" href="{{ route('cliente.index') }}">Cliente</a>
                             <a class="nav-link active" href="{{ route('orderService.index') }}">Ordem de Serviço</a>
                             <li><hr class="dropdown-divider"></li>
+                            <a href="#" class="nav-link active">Logout</a>
                         </ul>
                     </li>
                 </div>
@@ -32,5 +33,6 @@
             @yield('content')
         </article>
     </body>
+    <script src="{{ asset('assets/js/checkTel.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </html>
