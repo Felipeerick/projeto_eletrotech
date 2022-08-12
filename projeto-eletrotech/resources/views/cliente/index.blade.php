@@ -19,7 +19,11 @@
             @forelse($clientes as $cliente)
                 <tr>
                     <td>{{ $cliente->name }}</td>
-                    <td>{{ $cliente->email }}</td> 
+                    @if($cliente->email)
+                        <td>{{ $cliente->email }}</td>
+                    @else 
+                        <td>Sem email cadastrado</td>
+                    @endif
                     <td>{{ $cliente->tel }}</td> 
                     <td> <a href="{{ route('cliente.show', $cliente->id) }}" class="btn btn-info">visualizar</a></td>  
                 </tr>

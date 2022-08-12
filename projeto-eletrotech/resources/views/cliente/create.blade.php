@@ -16,7 +16,7 @@
             </div>
             <div class="mb-3">
                 <label for="tel" class="form-label">Número de telefone</label>
-                <input type="text" name='tel' class="form-control" id="tel" required placeholder="71 9 9999-9999">
+                <input type="text" name='tel' pattern="[0-9]{2} [0-9]{1} [0-9]{4}-[0-9]{4}" class="form-control" id="tel" required placeholder="71 9 9999-9999">
             </div>
 
             <hr>

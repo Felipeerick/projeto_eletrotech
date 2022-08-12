@@ -21,7 +21,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="tel" class="form-label">Número de telefone</label>
-                    <input type="text" style="width: 220px;" name='tel' class="form-control" id="tel" required placeholder="71 9 9999-9999">
+                    <input type="text" style="width: 220px;" pattern="[0-9]{2} [0-9]{1} [0-9]{4}-[0-9]{4}"  name='tel' class="form-control" id="tel" required placeholder="71 9 9999-9999">
                 </div>
                 <div class="mb-3  mx-3">
                     <label for="equipment" class="form-label">Equipamento</label>
@@ -78,7 +78,7 @@
                 <div class="mx-3">
                     <div class="mb-4">
                         <label for="valueProduct" class="form-label">Valor do Produto</label>
-                        <input type="number" style="width: 220px;" placeholder="Ex:33" name="valueProduct" required class="form-control" id="valueProduct">
+                        <input type="text" style="width: 220px;" placeholder="Ex:33" name="valueProduct" required class="form-control" id="valueProduct">
                     </div>
                     <div>
                         <label for="warrantyProduct" class="form-label">Garantia do Produto</label>
@@ -87,7 +87,7 @@
                 </div>
                 <div>
                     <label for="discountProduct" class="form-label">Desconto do Produto</label>
-                    <input type="number" style="width: 220px;" name="discountProduct" placeholder="Somente números inteiros Ex:3" required class="form-control" id="discount">
+                    <input type="text" style="width: 220px;" name="discountProduct" placeholder="Somente números inteiros Ex:3" required class="form-control" id="discount">
                 </div>
             </div>
             <hr>
@@ -110,7 +110,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="discountService" class="form-label">Desconto do Serviço</label>
-                    <input type="number" style="width: 220px;" name="discountService" placeholder="Somente números inteiros Ex:3" required class="form-control" id="discount">
+                    <input type="text" style="width: 220px;" name="discountService" placeholder="Somente números inteiros Ex:3" required class="form-control" id="discount">
                 </div>
             </div>
            

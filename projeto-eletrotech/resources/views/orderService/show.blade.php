@@ -4,7 +4,15 @@
 
   <h3 class="mt-3 mb-2">Ordem de Serviço do Cliente {{$order->name}}</h3>
 
-  <table class="table table-hover mt-4">
+  <div class="mt-4">
+      <a href="#" class="btn btn-info">Gerar PDF da Ordem de Serviço</a>
+
+      <a href="#" class="btn btn-danger mx-3">Deletar essa Ordem de Serviço</a>
+
+      <a href="#" class="btn btn-success">Editar essa Ordem de Serviço</a>
+  </div>
+
+  <table class="table table-hover mt-3">
       <thead>
           <tr>   
               <th>N° da OS</th>
@@ -84,7 +92,7 @@
                 @else
                   <td>Sem Desconto</td>
                 @endif
-                <td>R$ {{ number_format($order->valueTotalService, 2, '.', ',') }} Reais</td> 
+                <td>R$ {{ number_format($order->valueTotalProduct, 2, '.', ',') }} Reais</td> 
               </tr>
       </tbody> 
   </table>
@@ -108,7 +116,7 @@
                 @else
                   <td>Sem Desconto</td>
                 @endif
-                <td>R$ {{ number_format($order->valueTotalProduct, 2, '.', ',') }} Reais</td> 
+                <td>R$ {{ number_format($order->valueTotalService, 2, '.', ',') }} Reais</td> 
               </tr>
       </tbody> 
   </table>

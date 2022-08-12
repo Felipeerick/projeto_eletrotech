@@ -23,7 +23,7 @@
                     <td>{{ $order->id }}</td>
                     <td>{{ $order->name }}</td>
                     <td>{{ date('d/m/Y ', strtotime($order->dateOfEntry)) }}</td> 
-                    <td>R$ {{ number_format($order->valueTotal, 2, ',', '.') }} Reais</td> 
+                    <td>R$ {{ number_format($order->valueTotalOs, 2, ',', '.') }} Reais</td> 
                     <td>{{ $order->status }}</td> 
                     <td> <a href="{{route('orderService.show', $order->id)}}" class="btn btn-info">visualizar</a></td>  
                 </tr>
