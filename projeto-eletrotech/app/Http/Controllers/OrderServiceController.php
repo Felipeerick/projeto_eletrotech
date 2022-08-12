@@ -50,7 +50,7 @@ class OrderServiceController extends Controller
     public function show($id)
     {
         if(!$order = $this->orderService->find($id))
-        return redirect()->route('cliente.index');
+        return redirect()->route('orderService.index');
 
         return view('orderService.show', compact('order'));
     }

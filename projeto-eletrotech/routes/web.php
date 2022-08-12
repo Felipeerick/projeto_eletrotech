@@ -4,11 +4,16 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     ClienteController,
     OrderServiceController,
+    PDFController,
 };
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+//PDF
+Route::get('/pdf/{id}', [PDFController::class, 'pdf'])->name('pdf');
+
 
 //cliente
 
