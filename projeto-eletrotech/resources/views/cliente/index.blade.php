@@ -61,7 +61,7 @@
                 </tr>
                 @empty
                 <div class="alert alert-primary mt-4" role="alert">
-                    Ops... sua tabela está vazia :}
+                    Ops... sua tabela está vazia ou não encontramos resultado para a pesquisa :}
                 </div>
             @endforelse
         </tbody> 

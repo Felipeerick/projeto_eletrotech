@@ -60,8 +60,8 @@
                     <td> <a href="{{route('orderService.show', $order->id)}}" class="btn btn-info">visualizar</a></td>  
                 </tr>
                 @empty
-                <div class="alert alert-primary mt-3" role="alert">
-                    Ops... sua tabela está vazia :}
+                <div class="alert alert-primary mt-4" role="alert">
+                    Ops... sua tabela está vazia ou não encontramos resultado para a pesquisa :}
                 </div>
             @endforelse
         </tbody> 
