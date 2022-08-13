@@ -4,7 +4,19 @@
 
     <h2 class="mt-5">Listagem de Clientes</h2>
 
-    <a href="{{ route('cliente.create') }}" class="btn btn-info mt-2">+ Adicionar novo cliente</a>
+    <div class="d-flex">
+        <a href="{{ route('cliente.create') }}" class="btn btn-info mt-2">+ Adicionar novo cliente</a>
+        <form action="{{ route('cliente.index') }}" method="get" class='d-flex mt-2'>
+            @csrf
+            <div class='form-group w-100 me-1 mx-3' >
+                <input type="search" id="form1" name='search' class="form-control rounded " placeholder='Pesquisar'/>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-search"></i>
+            </button> 
+        </form>
+    </div>
+
     @if(session()->has('add'))
         <span class="d-block p-2  mt-3 mb-1  alert alert-success">{{ session()->get('add') }}</span>
     @endif

@@ -5,6 +5,18 @@
     <h2 class="mt-5">Ordem de Serviços</h2>
 
     <a href="{{ route('orderService.create') }}" class="btn btn-info mt-2">+ Adicionar nova ordem de serviço</a>
+    
+    <div class="d-flex">
+        <form action="{{ route('orderService.index') }}" method="get" class='d-flex mt-2'>
+            @csrf
+            <div class='form-group w-100 me-1 mx-3' >
+                <input type="search" id="form1" name='search' class="form-control rounded " placeholder='Pesquisar'/>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-search"></i>
+            </button> 
+        </form>
+    </div>
 
     @if(session()->has('create'))
     <span class="d-block p-2  mt-3 mb-1  alert alert-success">{{ session()->get('create') }}</span>

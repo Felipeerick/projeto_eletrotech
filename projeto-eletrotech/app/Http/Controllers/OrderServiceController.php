@@ -17,9 +17,12 @@ class OrderServiceController extends Controller
     $this->cliente = $cliente;
    }
 
-    public function index()
+    public function index(Request $request)
     {
-        $order_service = OrderService::all();
+        $order_service = $this->orderService->getOrderService(
+            $request->search ?? ''
+        );
+
         return view('orderService.index', compact('order_service'));
     }
 

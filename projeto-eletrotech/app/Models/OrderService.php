@@ -37,7 +37,14 @@ class OrderService extends Model
         'tel',
     ];
 
-    public function cliente(){
-        return $this->hasMany(Cliente::class);
+    public function getOrderService($search){
+        $orderService = $this->where(function ($query) use ($search){
+            if($search){
+                $query->orwhere('name', 'LIKE', "%{$search}%");
+                $query->where('email', $search);
+            }
+        });
+
+        return $orderService->paginate(4);
     }
 }

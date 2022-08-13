@@ -19,4 +19,15 @@ class Cliente extends Model
         'state',
         'city',
     ];
+
+    public function getClientes($search){
+        $cliente = $this->where(function ($query) use ($search){
+            if($search){
+                $query->where('email', $search);
+                $query->orWhere('name', 'LIKE', "%{$search}%");
+            }
+        });
+        
+        return $cliente->paginate(4);
+    }
 }

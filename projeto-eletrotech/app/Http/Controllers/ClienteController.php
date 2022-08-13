@@ -12,9 +12,11 @@ class ClienteController extends Controller
         $this->cliente = $cliente;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $clientes = $this->cliente->all();
+        $clientes = $this->cliente->getClientes(
+            $request->search ?? ''
+        );
 
         return view('cliente.index', compact('clientes'));
     }
