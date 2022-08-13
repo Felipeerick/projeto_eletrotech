@@ -28,6 +28,6 @@ class Cliente extends Model
             }
         });
         
-        return $cliente->paginate(4);
+        return $cliente->paginate(6);
     }
 }

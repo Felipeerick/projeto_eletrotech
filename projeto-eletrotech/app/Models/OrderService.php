@@ -45,6 +45,6 @@ class OrderService extends Model
             }
         });
 
-        return $orderService->paginate(4);
+        return $orderService->paginate(6);
     }
 }

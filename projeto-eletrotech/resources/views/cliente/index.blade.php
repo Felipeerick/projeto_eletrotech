@@ -15,6 +15,15 @@
                 <i class="fas fa-search"></i>
             </button> 
         </form>
+        <form action="{{ route('cliente.index') }}" method="get" class="mt-2">
+            @csrf
+            <div class='form-group w-100' >
+                <input type="hidden" id="form1" name='search' class="form-control rounded" value=" " placeholder='Pesquisar'/>
+            </div>
+            <button type="submit" class="btn btn-primary mx-1">
+                Limpar <i class="fa-solid fa-trash"></i> 
+            </button> 
+        </form>
     </div>
 
     @if(session()->has('add'))
@@ -51,12 +60,15 @@
                     <td> <a href="{{ route('cliente.show', $cliente->id) }}" class="btn btn-info">visualizar</a></td>  
                 </tr>
                 @empty
-                <div class="alert alert-primary mt-3" role="alert">
-                    Ops... sua tabela está vazia, cadastre um novo usuário para preencher a tabela e a mensagem sumir :}
+                <div class="alert alert-primary mt-4" role="alert">
+                    Ops... sua tabela está vazia :}
                 </div>
             @endforelse
         </tbody> 
     </table>
 
+    <div class="justify-content-center pagination">
+        {{ $clientes->links('pagination::bootstrap-4') }}
+    </div>
 
 @endsection

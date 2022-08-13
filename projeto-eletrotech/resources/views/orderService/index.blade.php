@@ -4,9 +4,8 @@
 
     <h2 class="mt-5">Ordem de Serviços</h2>
 
-    <a href="{{ route('orderService.create') }}" class="btn btn-info mt-2">+ Adicionar nova ordem de serviço</a>
-    
     <div class="d-flex">
+        <a href="{{ route('orderService.create') }}" class="btn btn-info mt-2">+ Adicionar nova ordem de serviço</a>
         <form action="{{ route('orderService.index') }}" method="get" class='d-flex mt-2'>
             @csrf
             <div class='form-group w-100 me-1 mx-3' >
@@ -14,6 +13,15 @@
             </div>
             <button type="submit" class="btn btn-primary">
                 <i class="fas fa-search"></i>
+            </button> 
+        </form>
+        <form action="{{ route('orderService.index') }}" method="get" class="mt-2">
+            @csrf
+            <div class='form-group w-100' >
+                <input type="hidden" id="form1" name='search' class="form-control rounded" value=" " placeholder='Pesquisar'/>
+            </div>
+            <button type="submit" class="btn btn-primary mx-1">
+                Limpar <i class="fa-solid fa-trash"></i> 
             </button> 
         </form>
     </div>
@@ -53,12 +61,14 @@
                 </tr>
                 @empty
                 <div class="alert alert-primary mt-3" role="alert">
-                    Ops... sua tabela está vazia, cadastre um novo usuário para preencher a tabela e a mensagem sumir :}
+                    Ops... sua tabela está vazia :}
                 </div>
             @endforelse
         </tbody> 
     </table>
 
-
+    <div class="justify-content-center pagination">
+        {{ $order_service->links('pagination::bootstrap-4') }}
+    </div>
 
 @endsection
