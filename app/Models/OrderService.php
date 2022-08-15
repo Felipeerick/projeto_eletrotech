@@ -40,8 +40,7 @@ class OrderService extends Model
     public function getOrderService($search){
         $orderService = $this->where(function ($query) use ($search){
             if($search){
-                $query->orwhere('name', 'LIKE', "%{$search}%");
-                $query->where('email', $search);
+                $query->where('name', 'LIKE', "%{$search}%");
             }
         });
 
