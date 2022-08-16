@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('order_services', function (Blueprint $table) {
             $table->id();
-            $table->string('dateOfEntry');
+            $table->string('departureDate')->nullable();
             $table->string('valueTotalProduct');
             $table->string('valueTotalService');
             $table->string('valueTotalOs');

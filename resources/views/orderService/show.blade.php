@@ -21,22 +21,40 @@
           <tr>   
               <th>N° da OS</th>
               <th>Data de cadastro</th>
-              <th>Nome</th>
-              <th>Telefone </th>
+              <th>Data de Saída</th>
               <th>Status</th>
           </tr>
       </thead>
       <tbody>
               <tr>
                   <td>{{ $order->id }}</td>
-                  <td>{{ $order->dateOfEntry }}</td> 
+                  <td>{{ $order->created_at }}</td> 
+                  @if($order->departureDate)
+                    <td>{{ $order->departureDate }}</td>
+                  @else
+                    <td>Sem data de Saída cadastrada</td>
+                  @endif
+                  <td>{{ $order->status }}</td> 
+              </tr>
+      </tbody> 
+  </table>
+  <table class="table table-hover mt-3">
+      <thead>
+          <tr>   
+              <th>Nome</th>
+              <th>Telefone </th>
+              <th>Valor Total da Ordem de Serviço</th>  
+          </tr>
+      </thead>
+      <tbody>
+              <tr>
                   <td>{{ $order->name }}</td>
                   @if($order->tel) 
                       <td>{{ $order->tel }}</td>
                   @else
                       <td>Sem Telefone Cadastrado</td>
                   @endif 
-                  <td>{{ $order->status }}</td> 
+                  <td>R$ {{ number_format($order->valueTotalOs, 2, '.', ',') }} Reais</td>
               </tr>
       </tbody> 
   </table>
@@ -47,7 +65,7 @@
               <th>Modelo</th>
               <th>Marca</th>
               <th>Número de Serial</th>
-              <th>Valor Total da Ordem de Serviço</th>
+              
           </tr>
 
       
@@ -58,7 +76,6 @@
                   <td>{{$order->model}}</td> 
                   <td>{{$order->brand}}</td>
                   <td>{{$order->serialNumber}}</td>
-                  <td>R$ {{ number_format($order->valueTotalOs, 2, '.', ',') }} Reais</td>
               </tr>
       </tbody> 
   </table>

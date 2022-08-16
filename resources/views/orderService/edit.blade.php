@@ -9,8 +9,8 @@
             @method('PUT')
             <div class="d-flex">
                 <div class="mb-3">
-                    <label for="dateOfEntry" class="form-label">Data de cadastro</label>
-                    <input name='dateOfEntry' readonly class="form-control" id="dateOfEntry" style="width: 220px;" required  value="{{date('Y-m-d ')}}">
+                    <label for="departureDate" class="form-label">Data de Saída (OPCIONAL)</label>
+                    <input name='departureDate' readonly class="form-control" id="departureDate" style="width: 220px;" required>
                 </div>
                 <div class="mb-3  mx-3">
                     <label for="name" class="form-label">Nome do Cliente</label>
@@ -54,12 +54,12 @@
             </div>
             <div class="d-flex">
                 <div class="form-floating">
-                    <textarea class="form-control" maxlength="538" name='technicalReport' placeholder="Leave a comment here" id="Laudo técnico" style="width: 300px; height:150px; resize:none;">{{ $order->technicalReport }}</textarea>
+                    <textarea class="form-control" maxlength="180" name='technicalReport' placeholder="Leave a comment here" id="Laudo técnico" style="width: 300px; height:150px; resize:none;">{{ $order->technicalReport }}</textarea>
                     <label for="Laudo técnico">Laudo técnico</label>
                 </div>
             
                 <div class="form-floating mx-3">
-                    <textarea class="form-control" maxlength="538"name='defect' placeholder="Leave a comment here" id="Defeito ou motivo" style="width: 300px; height:150px; resize:none;">{{ $order->defect }}</textarea>
+                    <textarea class="form-control" maxlength="180"name='defect' placeholder="Leave a comment here" id="Defeito ou motivo" style="width: 300px; height:150px; resize:none;">{{ $order->defect }}</textarea>
                     <label for="Defeito ou motivo">Defeito ou motivo</label>
                 </div>
                 <div class="form-floating">
@@ -73,7 +73,7 @@
 
             <div class="d-flex">
                 <div class="form-floating mt-3 mb-2">
-                    <textarea class="form-control"maxlength="538" name='productDescription' placeholder="Leave a comment here" id="Descrição do Produto" style="width: 300px; height:150px; resize:none;">{{ $order->productDescription }}</textarea>
+                    <textarea class="form-control"maxlength="180" name='productDescription' placeholder="Leave a comment here" id="Descrição do Produto" style="width: 300px; height:150px; resize:none;">{{ $order->productDescription }}</textarea>
                     <label for="Descrição do Produto">Descrição do Produto</label>
                 </div>
                 <div class="mx-3">
@@ -96,7 +96,7 @@
             <h2>Serviços realizados</h2>
             <div class="d-flex">
                 <div class="form-floating mt-3 mb-2">
-                    <textarea class="form-control"maxlength="538" name="serviceDescription" placeholder="Leave a comment here" id="Descrição do Produto" style="width: 300px; height:150px; resize:none;">{{ $order->serviceDescription }}</textarea>
+                    <textarea class="form-control"maxlength="180" name="serviceDescription" placeholder="Leave a comment here" id="Descrição do Produto" style="width: 300px; height:150px; resize:none;">{{ $order->serviceDescription }}</textarea>
                     <label for="Descrição do Produto">Descrição do Serviço</label>
                 </div>
                 <div class="mx-3">

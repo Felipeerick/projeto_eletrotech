@@ -12,6 +12,7 @@
           <ul class="menu">
             <li><a href="#about" class="menu-item">QUEM SOMOS</a></li>
             <li><a href="#services" class="menu-item">NOSSOS SERVIÇOS</a></li>
+            <li><a href="{{ route('login') }}" class="menu-item">ADMIN</a></li>
           </ul>
           <a href="#contact" class="btn-primary"
             ><span>FALE CONOSCO!</span></a>

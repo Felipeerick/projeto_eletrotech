@@ -54,7 +54,7 @@
                 <tr>
                     <td>{{ $order->id }}</td>
                     <td>{{ $order->name }}</td>
-                    <td>{{ date('d/m/Y ', strtotime($order->dateOfEntry)) }}</td> 
+                    <td>{{ date('d/m/Y ', strtotime($order->created_at)) }}</td> 
                     <td>R$ {{ number_format($order->valueTotalOs, 2, ',', '.') }} Reais</td> 
                     <td>{{ $order->status }}</td> 
                     <td> <a href="{{route('orderService.show', $order->id)}}" class="btn btn-info">visualizar</a></td>  
