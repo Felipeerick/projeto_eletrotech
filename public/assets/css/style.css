@@ -7,6 +7,23 @@
   font-family: "Poppins", sans-serif;
 }
 
+.m{
+  margin-top: 20px;
+}
+
+.span-m{
+  margin-top: 10px;
+}
+
+.color-white{
+  color: white;
+  font-size: 1.5rem;
+}
+
+.color-one{
+background-color: brown;
+}
+
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -27,7 +44,7 @@ body {
 
 .title-icon{
   font-size: 2.0rem;
-  color: white;
+  color: rgb(28, 236, 173);
 }
 
 :root {
@@ -119,7 +136,7 @@ h2 span {
 .tag {
   border-radius: 5rem;
   padding: 0.6rem 2.7rem;
-  background-color: var(--white-color);
+  background-color: yellow;
   font-size: 1.2rem;
   font-weight: 300;
 }
@@ -233,39 +250,11 @@ textarea:hover {
 @media (max-width: 900px) {
   header .container nav,
   header .container nav .menu {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   header .container {
     display: inline-block;
-  }
-
-  header .container nav {
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.2s;
-    top: -20rem;
-  }
-
-  header .container nav .menu,
-  header .container nav .btn-primary,
-  header .container nav .menu-social {
-    display: none;
-  }
-
-  header .container nav.show {
-    opacity: 1;
-    visibility: visible;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    align-items: center;
-    justify-content: center;
-    gap: 8rem;
-    background-color: var(--black-color);
   }
 
   header .container nav .menu,
@@ -273,29 +262,11 @@ textarea:hover {
   header .container nav .menu-social {
     display: flex;
   }
-  header .container .open-menu {
-    position: absolute;
-    background-image: url(../img/menu.svg);
-    width: 54px;
-    height: 54px;
-    background-repeat: no-repeat;
-    top: 3.5rem;
-    right: 1.5rem;
-    display: inline-block;
-    cursor: pointer;
-  }
-  header .container nav .close-menu {
-    position: absolute;
-    background-image: url(../img/close.svg);
-    width: 54px;
-    height: 54px;
-    background-repeat: no-repeat;
-    top: 3.5rem;
-    right: 4rem;
-    display: inline-block;
-    cursor: pointer;
-  }
 
+  header .container nav .btn-primary{
+    padding: 1.0rem;
+  }
+ 
   header .container nav .menu {
     gap: 6rem;
     justify-content: center;
@@ -308,7 +279,15 @@ textarea:hover {
   }
 
   header .container nav .menu li a {
-    font-size: 2.4rem;
+    font-size: 1.5rem;
+  }
+
+  .s-contact .container .title-contact{
+    margin-left: 21.0rem;
+  }
+
+  .s-contact .container .form-contact{
+    margin-left: 15.0rem;
   }
 }
 
@@ -360,7 +339,7 @@ header .container nav .menu-social img:hover {
 
 /* Section hero */
 .s-hero {
-  background: url('../images/eletrotech_fundo_home.jpg');
+  
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -465,7 +444,7 @@ header .container nav .menu-social img:hover {
   background-color: var(--primary-color);
 }
 
-.s-success .container .cards .card:last-child {
+.s-success .container .cards .card {
   margin-right: 0;
 }
 
@@ -655,6 +634,14 @@ footer .container .copy {
 
   .s-success .container .cards .card .card-info p {
     text-align: center;
+  }
+
+  .s-contact .container .title-contact {
+    margin: 3.0rem;
+  }
+
+  .s-contact .container .form-contact {
+    margin: 2.0rem;
   }
 }
 

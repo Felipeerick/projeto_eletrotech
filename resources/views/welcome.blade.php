@@ -32,7 +32,7 @@
       <section class="s-success">
         <div class="container">
           <div class="title-success">
-            <span class="tag">#Venham</span>
+            <span class="tag">#EmpresaDeQualidade</span>
             <h2><span> Empresa de Qualidade
             </span><br />Tem  Nome</h2>
           </div>
@@ -41,14 +41,14 @@
               <div class="card-title">
                 <h3>+50</h3>
               </div>
-              <div class="card-info">
+              <div class="card-info ">
                 <p>
                   Placas<strong> eletrônicas </strong> resolvidas
                 </p>
               </div>
             </div>
 
-            <div class="card">
+            <div class="card ">
               <div class="card-title">
                 <h3>+100</h3>
               </div>
@@ -80,7 +80,7 @@
           <div class="about-me">
             <h2>QUEM SOMOS<span>.</span></h2>
             <p>
-              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+             Somos uma empresa criada em 2012 com a finalidade de entregar soluções aos nossos clientes agindo com a transparência. Fundada pelo técnico Ivan Augusto Rodriguez da Silva com mais de 4 anos de experiência na área, <span style="color:aqua">Somos a Eletrotech.</span><br> 
             </p>
             <ul>
               <li>
@@ -103,12 +103,15 @@
           <div class="cases">
             <div class="case">
               <img src="{{asset('assets/images/repairing.jpg')}}" alt="Case 1" />
+              <span class="color-white">Reparos de Notebooks: formatação e soluções de problemas de software.</span>
             </div>
             <div class="case">
-              <img src="{{asset('assets/images/repairing-cel.jpg')}}" alt="Case 2" />
+              <img src="{{asset('assets/images/repairing-cel.jpg')}}" class="m" alt="Case 2" />
+              <span class="color-white">Reparos de celular: manutenção na placa, formatação, troca de tela e bateria.</span>
             </div>
             <div class="case">
               <img src="{{asset('assets/images/3459428.jpg')}}" alt="Case 3" />
+              <span class="color-white">Reparos de televisão: manutenção na placa, troca de leds e troca de tela</span>
             </div>
           </div>
         </div>
