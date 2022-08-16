@@ -431,7 +431,6 @@ header .container nav .menu-social img:hover {
   height: 30.4rem;
   background-color: var(--white-color);
   border-radius: 4px;
-  margin-right: 3.3rem;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -444,8 +443,8 @@ header .container nav .menu-social img:hover {
   background-color: var(--primary-color);
 }
 
-.s-success .container .cards .card {
-  margin-right: 0;
+.s-success .container .cards .card-2 {
+  margin: 0 3.3rem 0 3.3rem;
 }
 
 .s-success .container .cards .card .card-title {
@@ -525,7 +524,7 @@ header .container nav .menu-social img:hover {
   flex-direction: column;
 }
 .s-cases .container .title-cases {
-  margin-bottom: 7.3rem;
+  margin:0 0 7.3rem 34.0rem;
 }
 
 .s-cases .container .cases {

@@ -49,7 +49,7 @@
               </div>
             </div>
 
-            <div class="card ">
+            <div class="card card-2">
               <div class="card-title">
                 <h3>+100</h3>
               </div>
