@@ -18,6 +18,11 @@
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
+             <!-- tel -->
+             <div>
+                <label for="tel">Telefone</label>>
+                <input type="text" id='tel' name="tel" class="block mt-1 w-full" required autofocus>
+            </div>
 
             <!-- Email Address -->
             <div class="mt-4">
