@@ -218,6 +218,7 @@ textarea:hover {
   .s-cases .container .title-cases h2 {
     text-align: center;
   }
+
   .s-cases .container .cases {
     flex-direction: column;
     gap: 4rem;
@@ -524,7 +525,11 @@ header .container nav .menu-social img:hover {
   flex-direction: column;
 }
 .s-cases .container .title-cases {
-  margin:0 0 7.3rem 34.0rem;
+  margin-bottom:7.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .s-cases .container .cases {
