@@ -122,27 +122,41 @@
         <div class="container">
           <div class="title-contact">
             <h2>
-              ENTRE EM <br />
+              ENTRE EM <br/>
               CONTATO<span>.</span>
             </h2>
             <span class="tag">#LetsGoUp 🚀</span>
           </div>
 
-          <form class="form-contact" method="post" action="">
-            <div class="input-group">
-              <input type="text" placeholder="Preencha seu nome" required />
-            </div>
-
-            <div class="input-group">
-              <input type="text" placeholder="Preencha seu nome" required />
-            </div>
-
-            <div class="input-group">
-              <textarea rows="6" placeholder="Deixe sua mensagem"></textarea>
-            </div>
-            <div class="input-button">
-              <button class="btn-primary" type="submit">ENVIAR</button>
-            </div>
+          <form class="form-contact" method="post" action="{{ route('email.contact') }}">
+              @csrf
+              @if($errors->any())
+                  <div class="alerta error" role="alert">
+                      @foreach($errors->all() as $error)
+                         <li>{{ $error }}</li>
+                      @endforeach 
+                    </div>
+              @endif
+              @if(session()->has('success'))
+                  <div class="alerta sucesso" role="alert">
+                     <li>{{ session()->get('success') }}</li>
+                  </div>
+              @endif
+              <div class="input-group">
+                  <input type="text" placeholder="Preencha seu nome" name="name" required />
+              </div>
+              <div class="input-group">
+                  <input type="text" placeholder="Preencha seu email" name="email" required />
+              </div>
+              <div class="input-group">
+                  <input type="text" placeholder="Preencha seu número de telefone" name='tel' required />
+              </div>
+              <div class="input-group">
+                  <textarea rows="6" name="message" placeholder="Deixe sua mensagem"></textarea>
+              </div>
+              <div class="input-button">
+                  <button class="btn-primary" type="submit">ENVIAR</button>
+              </div>
           </form>
         </div>
       </section>

@@ -5,6 +5,7 @@ require __DIR__.'/auth.php';
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     ClienteController,
+    EmailController,
     OrderServiceController,
     PDFController,
 };
@@ -12,7 +13,10 @@ use App\Http\Controllers\{
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
+//Emails
+Route::post('/email', [EmailController::class, 'store'])->name('email.contact');
 
 Route::middleware(['auth'])->group(function(){
 
